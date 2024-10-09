@@ -1,0 +1,19 @@
+﻿<Window x:Class="Lab4_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab4_1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBox x:Name="TxtBox1" Text="{Binding ElementName=TxtBox2, Path=Text}" FontSize="{Binding ElementName=slider1, Path=Value}" />
+        <TextBox x:Name="TxtBox2" Text="{Binding ElementName=TxtBox1, Path=Text}" FontSize="{Binding ElementName=slider2, Path=Value}" />
+        <TextBox x:Name="TexBox3" Text="{Binding ElementName=slider1, Path=Value}"/>
+        <Slider x:Name="slider1" Minimum="15" Maximum="30" Value="{Binding ElementName=TexBox3,Path=Text}" />
+            <Slider x:Name="slider2" Minimum="15" Maximum="30" Value="{Binding ElementName=slider1, Path=Value}"/>
+            
+        </StackPanel>
+    </Grid>
+</Window>
